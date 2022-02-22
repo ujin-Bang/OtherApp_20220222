@@ -7,6 +7,7 @@ import com.example.otherapp_20220222.fragments.MyProfileFragment
 import com.example.otherapp_20220222.fragments.PizzaStoreListFragment
 
 class MainViewPagerAdapter(fm: FragmentManager): FragmentPagerAdapter(fm) {
+
     override fun getCount() = 2
 
     override fun getItem(position: Int): Fragment {
@@ -16,4 +17,12 @@ class MainViewPagerAdapter(fm: FragmentManager): FragmentPagerAdapter(fm) {
             else -> MyProfileFragment()
         }
     }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        return when(position){
+            0 -> "피자 주문"
+            else ->"내 정보 설정"
+        }
+    }
+
 }
